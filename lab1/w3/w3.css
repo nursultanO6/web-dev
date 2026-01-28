@@ -1,0 +1,75 @@
+body {
+  background-image: url("https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjU0NmJhdGNoMy1teW50LTM0LWJhZGdld2F0ZXJjb2xvcl8xLmpwZw.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+p {
+  color: red;
+  font-family: courier;
+  font-size: 160%;
+}
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+table, th, td {
+  color: white;
+  border: 1px solid black;
+  border-color: white;
+  border-collapse: collapse;
+  border-radius: 10px;
+  border-style: dotted;
+}
+th, td {
+  background-color: #96D4D4;
+}
+
+.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.block{
+  float: left;
+}
+
+.block a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+  background-color: #333333;
+}
+
+.block a:hover {
+  background-color: #111111;
+}
+ 
+.thisdiv{
+  width:300px;
+  margin:auto;
+}
+
+.container {
+  width:100%;
+  overflow:auto
+}
+
+.container div {
+  width:33%;  
+  display: inline-block;
+
+}
