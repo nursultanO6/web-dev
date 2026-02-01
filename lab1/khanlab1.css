@@ -1,0 +1,7 @@
+.info:hover {
+            background: #e8f6ef;
+            color: #000;
+            border: 5px double #2ecc71;
+            transition: 0.4s;
+            transform: scale(1.02);
+        }

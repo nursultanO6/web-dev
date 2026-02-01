@@ -1,0 +1,84 @@
+/* Body styles */
+body {
+    background-color: #f0f8ff;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+    color: #333;
+}
+
+/* Headings */
+h1 {
+    color: #2a9df4;
+    font-size: 36px;
+}
+
+h2 {
+    color: #1a73e8;
+    font-size: 28px;
+}
+
+h3 {
+    color: #0d47a1;
+    font-size: 24px;
+}
+
+/* Links */
+a {
+    color: #ff5722;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #e64a19;
+}
+
+/* Lists */
+ol {
+    padding-left: 20px;
+    list-style-type: decimal;
+}
+
+ul {
+    padding-left: 20px;
+    list-style-type: square;
+}
+
+/* Table styles */
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #e3f2fd;
+}
+
+/* Contact form styles */
+input, textarea {
+    width: 50%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #1a73e8;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0d47a1;
+}
