@@ -1,0 +1,84 @@
+<!-- Header -->
+<header class="header">
+  <div class="header-content">
+    <div class="logo">TICKETON</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Поиск мероприятий..." />
+    </div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<div class="main-container">
+  <!-- Categories -->
+  <div class="categories">
+    <button class="category-btn active">Все мероприятия</button>
+    <button class="category-btn">Концерты</button>
+    <button class="category-btn">Спорт</button>
+    <button class="category-btn">Театр</button>
+    <button class="category-btn">Детские</button>
+    <button class="category-btn">Выставки</button>
+  </div>
+
+  <!-- Events Grid -->
+  <div class="events-grid">
+    @for (event of events; track event.id) {
+      <div class="event-card">
+        <div class="event-image-container">
+          <img [src]="currentImageMap[event.id] || event.image" [alt]="event.name" class="event-image" />
+          <div class="event-date-badge">
+            {{ event.date || 'Скоро' }}
+          </div>
+        </div>
+        
+        <div class="event-content">
+          <div class="event-category">{{ event.category || 'Концерт' }}</div>
+          <h3 class="event-name">{{ event.name }}</h3>
+          <p class="event-description">{{ event.description }}</p>
+          
+          <div class="event-meta">
+            <div class="event-location">{{ event.location || 'Алматы' }}</div>
+            <div class="event-price">{{ event.price.toLocaleString() }} ₸</div>
+          </div>
+          
+          <div class="rating">
+            @for (star of getStars(event.rating); track $index) {
+              <span class="star" [class]="star"></span>
+            }
+            <span class="rating-number">({{ event.rating }})</span>
+          </div>
+          
+          <div class="event-actions">
+            <a [href]="event.link" target="_blank" class="btn btn-primary">Купить билет</a>
+            <div class="btn-share">
+              <button (click)="shareOnWhatsApp(event)" class="btn-share" title="Поделиться в WhatsApp">📱</button>
+              <button (click)="shareOnTelegram(event)" class="btn-share" title="Поделиться в Telegram">✈️</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Image Gallery -->
+        <div class="image-gallery">
+          @for (img of event.images; track img) {
+            <img [src]="img" [alt]="event.name" class="thumbnail" (click)="currentImageMap[event.id] = img" />
+          }
+        </div>
+      </div>
+    }
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href="#" class="footer-link">О нас</a>
+      <a href="#" class="footer-link">Партнёрам</a>
+      <a href="#" class="footer-link">Помощь</a>
+      <a href="#" class="footer-link">Контакты</a>
+    </div>
+    <div>
+      <p>&copy; 2024 Ticketon.kz. Все права защищены.</p>
+    </div>
+  </div>
+</footer>

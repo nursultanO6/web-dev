@@ -1,4 +1,4 @@
-export interface Product {
+export interface Event {
   id: number;
   name: string;
   description: string;
@@ -7,4 +7,7 @@ export interface Product {
   image: string;
   images: string[];
   link: string;
+  date?: string;
+  category?: string;
+  location?: string;
 }

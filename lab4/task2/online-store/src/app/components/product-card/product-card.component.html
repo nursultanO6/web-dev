@@ -50,11 +50,30 @@
       <a [href]="product.link" target="_blank" class="btn btn-primary">Buy</a>
       <a [href]="product.link" target="_blank" class="btn btn-secondary">In installment</a>
 
+      <button class="btn btn-like" (click)="likeProduct()" [class.liked]="isLiked" title="Like">
+        ❤ {{ product.likes }}
+      </button>
+
+      <button class="btn btn-delete" (click)="confirmDelete()" title="Delete">
+        🗑️
+      </button>
+
       <div class="share-wrapper">
         <button class="btn btn-share" (click)="toggleShareMenu()" title="Поделиться">&#8599;</button>
         <div class="share-menu" *ngIf="showShareMenu">
           <button class="share-option whatsapp" (click)="shareWhatsApp()">WhatsApp</button>
           <button class="share-option telegram" (click)="shareTelegram()">Telegram</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delete Confirmation Dialog -->
+    <div class="delete-confirmation" *ngIf="deleteConfirmation">
+      <div class="confirmation-modal">
+        <p>Are you sure you want to delete this product?</p>
+        <div class="confirmation-actions">
+          <button class="btn btn-confirm" (click)="deleteProduct()">Yes, Delete</button>
+          <button class="btn btn-cancel" (click)="cancelDelete()">Cancel</button>
         </div>
       </div>
     </div>

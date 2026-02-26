@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../models/product.model';
 
@@ -11,10 +11,14 @@ import { Product } from '../../models/product.model';
 })
 export class ProductCardComponent {
   @Input() product!: Product;
+  @Output() productDeleted = new EventEmitter<number>();
+  @Output() productLiked = new EventEmitter<number>();
 
   activeImageIndex: number = 0;
   showGallery: boolean = false;
   showShareMenu: boolean = false;
+  isLiked: boolean = false;
+  deleteConfirmation: boolean = false;
 
   getStars(rating: number): number[] {
     return Array(5).fill(0).map((_, i) => i);
@@ -69,5 +73,26 @@ export class ProductCardComponent {
   formatPrice(price: number): string {
     return price.toLocaleString('ru-KZ') + ' ₸';
   }
-  
+
+  likeProduct(): void {
+    this.isLiked = !this.isLiked;
+    if (this.isLiked) {
+      this.product.likes++;
+    } else {
+      this.product.likes--;
+    }
+    this.productLiked.emit(this.product.id);
+  }
+
+  confirmDelete(): void {
+    this.deleteConfirmation = true;
+  }
+
+  cancelDelete(): void {
+    this.deleteConfirmation = false;
+  }
+
+  deleteProduct(): void {
+    this.productDeleted.emit(this.product.id);
+  }
 }
