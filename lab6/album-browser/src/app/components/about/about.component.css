@@ -1,0 +1,127 @@
+.about-page {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 2rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 1.5rem;
+}
+
+.about-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.75rem;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+}
+
+.about-card h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 1rem;
+}
+
+.about-card p {
+  color: #64748b;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin: 0 0 0.75rem;
+}
+
+.about-card p:last-child {
+  margin-bottom: 0;
+}
+
+code {
+  background: #f1f5f9;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.88rem;
+  color: #4f46e5;
+}
+
+.tech-list, .feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.tech-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.93rem;
+  color: #475569;
+}
+
+.feature-list li {
+  font-size: 0.93rem;
+  color: #475569;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.feature-list li::before {
+  content: '✓';
+  color: #22c55e;
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+}
+
+.tech-badge {
+  background: #eef2ff;
+  color: #4f46e5;
+  border: 1px solid #c7d2fe;
+  padding: 0.2rem 0.55rem;
+  border-radius: 5px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.highlight-card {
+  border-color: #c7d2fe;
+  background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+}
+
+.info-row {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.93rem;
+  color: #475569;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e0e7ff;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-row .label {
+  font-weight: 600;
+  color: #374151;
+  min-width: 80px;
+}
+
+.info-row a {
+  color: #4f46e5;
+  text-decoration: none;
+}
+
+.info-row a:hover {
+  text-decoration: underline;
+}
